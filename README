@@ -1,0 +1,13 @@
+Mootools v1.2+ utility class that takes a <select> box and skins it using CSS and Javascript.
+
+Usage:
+
+var skinned_dropdown = new Dropdown($('my_selectbox'), {
+	width: 125,
+	onSelect: function(value) {
+		switch(value)
+		{
+			case... // Handle cases here
+		}
+	}.bind(this)
+});
