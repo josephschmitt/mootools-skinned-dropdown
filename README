@@ -1,6 +1,16 @@
 Mootools v1.2+ utility class that takes a <select> box and skins it using CSS and Javascript.
 
-Usage:
+USAGE:
+
+Assuming this markup:
+
+<select id="my_selectbox">
+	<option>Option 1</option>
+	<option>Option 2</option>
+	<option>Option 3</option>
+</select>
+
+The dropdown is skinned by executing the following Javascript
 
 var skinned_dropdown = new Dropdown($('my_selectbox'), {
 	width: 125,
@@ -11,3 +21,20 @@ var skinned_dropdown = new Dropdown($('my_selectbox'), {
 		}
 	}.bind(this)
 });
+
+The Dropdown class creates the following markup next to the <select> element
+
+<div id="my_selectbox_dropdown_wrapper" class="dropdown_wrapper">
+	<div id="my_selectbox_dropdown" class="dropdown" style="width:125px;">
+		<div id="my_selectbox_dropdown_value" class="value">Option 1</div>
+	</div>
+	<div id="my_selectbox_dropdown_items" class="dropdown_items">
+		<ul>
+			<li id="my_selectbox_dropdown_item" class="selected">Option 1</li>
+			<li id="my_selectbox_dropdown_item">Option 2</li>
+			<li id="my_selectbox_dropdown_item">Option 3</li>
+		</ul>
+	</div>
+</div>
+
+and sets the <select> element to display:none.
